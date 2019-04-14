@@ -16,6 +16,10 @@ $thisDir = dirname(__FILE__);
 
 $pharPath = $thisDir . DIRECTORY_SEPARATOR . 'build';
 
+if (!file_exists($pharPath)) {
+    mkdir($pharPath);
+}
+
 $pharFile = 'generate-phpt.phar';
 
 $phar = new Phar($pharPath . DIRECTORY_SEPARATOR . $pharFile);
